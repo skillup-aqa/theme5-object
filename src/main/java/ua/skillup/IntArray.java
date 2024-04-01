@@ -1,7 +1,5 @@
 package ua.skillup;
 
-import java.util.Arrays;
-
 public class IntArray {
     private int[] array;
 
@@ -193,8 +191,19 @@ public class IntArray {
 
     @Override
     public String toString() {
+        String arrayString = "[";
+
+        for (int i = 0; i < array.length; i++) {
+            arrayString += array[i];
+            if (i < array.length - 1) {
+                arrayString += ", ";
+            }
+        }
+
+        arrayString += "]";
+
         return "IntArray{" +
-                "array=" + Arrays.toString(array) +
+                "array=" + arrayString +
                 '}';
     }
 
@@ -203,11 +212,26 @@ public class IntArray {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         IntArray intArray = (IntArray) o;
-        return Arrays.equals(array, intArray.array);
+
+        if (this.array.length != intArray.array.length) {
+            return false;
+        }
+
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.array[i] != intArray.array[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(array);
+        int result = 1;
+        for (int element : array)
+            result = 31 * result + element;
+
+        return result;
     }
 }
