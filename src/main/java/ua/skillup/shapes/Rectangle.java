@@ -1,5 +1,7 @@
 package ua.skillup.shapes;
 
+import java.util.Objects;
+
 public class Rectangle extends Shape {
     private final double a;
     private final double b;
@@ -17,5 +19,26 @@ public class Rectangle extends Shape {
     @Override
     public double area() {
         return a * b;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return a == rectangle.a && b == rectangle.b;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b);
     }
 }
