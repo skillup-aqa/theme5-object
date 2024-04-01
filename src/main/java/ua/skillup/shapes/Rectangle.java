@@ -42,11 +42,12 @@ public class Rectangle extends Shape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rectangle rectangle = (Rectangle) o;
-        return a == rectangle.a && b == rectangle.b;
+        return a == rectangle.a && b == rectangle.b
+                || a == rectangle.b && b == rectangle.a;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(a, b);
+        return Objects.hash(a) + Objects.hash(b);
     }
 }
