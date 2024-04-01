@@ -356,4 +356,25 @@ public class IntArrayTests {
         fillArrayWithNumbers(array.getArray());
         assertEquals(array.binarySearch(1, true), 0);
     }
+
+    @Test
+    public void testEquals() {
+        IntArray array1 = new IntArray(5);
+        fillArrayWithNumbers(array1.getArray());
+        IntArray array2 = new IntArray(5);
+        fillArrayWithNumbers(array2.getArray());
+        assertEquals(array2, array1);
+        assertEquals(array1.hashCode(), array2.hashCode());
+    }
+
+    @Test
+    public void testNotEquals() {
+        IntArray array1 = new IntArray(5);
+        fillArrayWithNumbers(array1.getArray());
+        IntArray array2 = new IntArray(5);
+        fillArrayWithNumbers(array2.getArray());
+        array2.getArray()[2] = 0;
+        assertNotEquals(array2, array1);
+        assertNotEquals(array2.hashCode(), array1.hashCode());
+    }
 }
