@@ -11,6 +11,14 @@ public class Rectangle extends Shape {
         this.b = b;
     }
 
+    public double getA() {
+        return a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
     @Override
     public double perimeter() {
         return 2 * (a + b);
