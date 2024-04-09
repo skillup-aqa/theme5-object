@@ -18,5 +18,7 @@ public class Main {
         printShapeInfo("Circle", circle);
         printShapeInfo("Rectangle", rectangle);
         printShapeInfo("Square", square);
+        Circle circle2 = new Circle(5);
+        System.out.println(circle.equals(circle2));
     }
 }
