@@ -8,17 +8,20 @@ public class Main {
         System.out.println("Area: " + shape.area());
         System.out.println();
     }
+
     public static void main(String[] args) {
         Triangle triangle = new Triangle(3, 4, 5);
         Circle circle = new Circle(5);
         Rectangle rectangle = new Rectangle(3, 4);
         Square square = new Square(5);
-
+        Circle circle2 = new Circle(8);
         printShapeInfo("Triangle", triangle);
         printShapeInfo("Circle", circle);
         printShapeInfo("Rectangle", rectangle);
         printShapeInfo("Square", square);
-        Circle circle2 = new Circle(5);
+
         System.out.println(circle.equals(circle2));
+        System.out.println(circle.hashCode());
+        System.out.println(circle);
     }
 }
