@@ -3,6 +3,7 @@ package ua.skillup.shapes;
 public class Circle extends Shape {
     private final double radius;
     //to test push from other laptop
+    //to test other
 
     public Circle(double radius) {
         this.radius = radius;
