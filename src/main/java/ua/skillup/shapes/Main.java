@@ -20,6 +20,7 @@ public class Main {
         Circle circle = new Circle(5);
         Rectangle rectangle = new Rectangle(3, 4);
         Square square = new Square(5);
+        Triangle triangle2 = new Triangle (4,3,5);
         Circle circle2 = new Circle(8);
         Square square2 = new Square(5);
         Rectangle rectangle2 = new Rectangle(5, 4);
@@ -32,6 +33,7 @@ public class Main {
         printOverrided(circle, circle2);
         printOverrided(square, square2);
         printOverrided(rectangle, rectangle2);
+        printOverrided(triangle, triangle2);
 
 
     }
