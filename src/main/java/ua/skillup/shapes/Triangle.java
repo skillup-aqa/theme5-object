@@ -41,9 +41,12 @@ public class Triangle extends Shape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Triangle triangle = (Triangle) o;
-        return ((a == triangle.a || a == triangle.b || a == triangle.c) &&
-                (b == triangle.a || b == triangle.b || b == triangle.c) &&
-                (area() == triangle.area()));
+        return ((a == triangle.a && b == triangle.b && c == triangle.c) ||
+                (a == triangle.a && b == triangle.c && c == triangle.b) ||
+                (a == triangle.b && b == triangle.c && c == triangle.a) ||
+                (a == triangle.b && b == triangle.a && c == triangle.c) ||
+                (a == triangle.c && b == triangle.a && c == triangle.b) ||
+                (a == triangle.c && b == triangle.b && c == triangle.a));
     }
 
     @Override
