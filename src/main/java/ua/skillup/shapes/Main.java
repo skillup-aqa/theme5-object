@@ -37,6 +37,9 @@ public class Main {
         System.out.println(square.hashCode());
         System.out.println(square + "\n");
 
-
+        Triangle triangle2 = new Triangle(3, 5, 5);
+        System.out.println(triangle.equals(triangle2));
+        System.out.println(triangle.hashCode());
+        System.out.println(triangle + "\n");
     }
 }

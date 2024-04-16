@@ -9,7 +9,7 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Square { " + "side = " + this.getA() +
+        return "Square {" + "side = " + this.getA() +
                 "}";
     }
 
