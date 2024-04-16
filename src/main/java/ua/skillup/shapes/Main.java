@@ -32,5 +32,11 @@ public class Main {
         System.out.println(rectangle.hashCode());
         System.out.println(rectangle + "\n");
 
+        Square square2 = new Square(4);
+        System.out.println(square.equals(square2));
+        System.out.println(square.hashCode());
+        System.out.println(square + "\n");
+
+
     }
 }
