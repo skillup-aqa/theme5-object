@@ -1,5 +1,7 @@
 package ua.skillup.shapes;
 
+import java.util.concurrent.Callable;
+
 public class Main {
 
     public static void printShapeInfo(String name, Shape shape) {
@@ -8,6 +10,7 @@ public class Main {
         System.out.println("Area: " + shape.area());
         System.out.println();
     }
+
     public static void main(String[] args) {
         Triangle triangle = new Triangle(3, 4, 5);
         Circle circle = new Circle(5);
@@ -18,5 +21,12 @@ public class Main {
         printShapeInfo("Circle", circle);
         printShapeInfo("Rectangle", rectangle);
         printShapeInfo("Square", square);
+
+        Circle circle2 = new Circle(7);
+        System.out.println(circle.equals(circle2));
+        System.out.println(circle.hashCode());
+        System.out.println(circle);
+
+
     }
 }
