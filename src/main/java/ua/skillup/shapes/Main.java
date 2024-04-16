@@ -25,8 +25,12 @@ public class Main {
         Circle circle2 = new Circle(7);
         System.out.println(circle.equals(circle2));
         System.out.println(circle.hashCode());
-        System.out.println(circle);
+        System.out.println(circle + "\n");
 
+        Rectangle rectangle2 = new Rectangle(5, 7);
+        System.out.println(rectangle.equals(rectangle2));
+        System.out.println(rectangle.hashCode());
+        System.out.println(rectangle + "\n");
 
     }
 }
