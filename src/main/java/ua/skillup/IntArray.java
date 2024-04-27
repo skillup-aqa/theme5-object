@@ -1,5 +1,8 @@
 package ua.skillup;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class IntArray {
     private int[] array;
 
@@ -24,7 +27,7 @@ public class IntArray {
     }
 
     public int max() {
-        if(array.length == 0) {
+        if (array.length == 0) {
             return 0;
         }
 
@@ -38,7 +41,7 @@ public class IntArray {
     }
 
     public int min() {
-        if(array.length == 0) {
+        if (array.length == 0) {
             return 0;
         }
 
@@ -61,7 +64,7 @@ public class IntArray {
     }
 
     public int avg() {
-        if(array.length == 0) {
+        if (array.length == 0) {
             return 0;
         }
         return sum() / array.length;
@@ -127,13 +130,13 @@ public class IntArray {
             return true;
         }
 
-        for(int i = 0; i < array.length - 1; i++) {
-            if(ascending) {
-                if(array[i] > array[i + 1]) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (ascending) {
+                if (array[i] > array[i + 1]) {
                     return false;
                 }
             } else {
-                if(array[i] < array[i + 1]) {
+                if (array[i] < array[i + 1]) {
                     return false;
                 }
             }
@@ -187,5 +190,46 @@ public class IntArray {
             }
         }
         return -1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IntArray intArray = (IntArray) o;
+        if (array.length != intArray.array.length) {
+            return false;
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != intArray.array[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int arrHash = 0;
+        for (int currentValue : array) {
+            arrHash += Objects.hash(currentValue);
+        }
+        return arrHash;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder arrToStr = new StringBuilder("[");
+        for (int currentValue : array) {
+            arrToStr.append(currentValue).append(" ");
+        }
+        arrToStr.append("]");
+        return arrToStr.toString();
+    }
+
+    public static void main(String[] args) {
+        IntArray arrayToTest = new IntArray(5);
+        arrayToTest.fillWithNumbers();
+        System.out.println(arrayToTest);
     }
 }
