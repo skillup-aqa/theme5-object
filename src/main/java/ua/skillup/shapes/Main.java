@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Area: " + shape.area());
         System.out.println();
     }
+
     public static void main(String[] args) {
         Triangle triangle = new Triangle(3, 4, 5);
         Circle circle = new Circle(5);

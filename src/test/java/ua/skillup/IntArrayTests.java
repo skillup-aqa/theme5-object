@@ -7,7 +7,7 @@ import static org.testng.Assert.*;
 public class IntArrayTests {
     private void fillArrayWithNumbers(int[] array, boolean ascending) {
         for (int i = 0; i < array.length; i++) {
-            if (ascending)  {
+            if (ascending) {
                 array[i] = i + 1;
             } else {
                 array[i] = array.length - i;
@@ -19,7 +19,7 @@ public class IntArrayTests {
         fillArrayWithNumbers(array, true);
     }
 
-    private boolean arraysEqual(int [] array1, int [] array2) {
+    private boolean arraysEqual(int[] array1, int[] array2) {
         if (array1.length != array2.length) {
             return false;
         }

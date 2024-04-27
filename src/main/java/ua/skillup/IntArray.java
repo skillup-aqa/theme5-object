@@ -24,7 +24,7 @@ public class IntArray {
     }
 
     public int max() {
-        if(array.length == 0) {
+        if (array.length == 0) {
             return 0;
         }
 
@@ -38,7 +38,7 @@ public class IntArray {
     }
 
     public int min() {
-        if(array.length == 0) {
+        if (array.length == 0) {
             return 0;
         }
 
@@ -61,7 +61,7 @@ public class IntArray {
     }
 
     public int avg() {
-        if(array.length == 0) {
+        if (array.length == 0) {
             return 0;
         }
         return sum() / array.length;
@@ -127,13 +127,13 @@ public class IntArray {
             return true;
         }
 
-        for(int i = 0; i < array.length - 1; i++) {
-            if(ascending) {
-                if(array[i] > array[i + 1]) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (ascending) {
+                if (array[i] > array[i + 1]) {
                     return false;
                 }
             } else {
-                if(array[i] < array[i + 1]) {
+                if (array[i] < array[i + 1]) {
                     return false;
                 }
             }
