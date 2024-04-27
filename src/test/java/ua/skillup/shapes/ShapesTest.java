@@ -27,7 +27,7 @@ public class ShapesTest {
         return new Object[][]{
                 {new Rectangle(1, 2), 2},
                 {new Square(1), 1},
-                {new Circle(1), Math.PI },
+                {new Circle(1), Math.PI},
                 {new Triangle(3, 4, 5), 6}
         };
     }
