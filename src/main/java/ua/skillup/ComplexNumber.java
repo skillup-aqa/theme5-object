@@ -1,5 +1,7 @@
 package ua.skillup;
 
+import java.util.Objects;
+
 public class ComplexNumber {
     private final double real;
     private final double imaginary;
@@ -81,7 +83,22 @@ public class ComplexNumber {
         return new ComplexNumber(real, -imaginary);
     }
 
+    @Override
     public String toString() {
-        return real + "+" + imaginary + "i";
+        return "ComplexNumber {" + "real = " + real + ", imaginary = " + imaginary + "i" + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ComplexNumber complexNumber = (ComplexNumber) o;
+        return real == complexNumber.real && imaginary == complexNumber.imaginary;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(real, imaginary);
     }
 }
+

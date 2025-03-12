@@ -1,5 +1,6 @@
 package ua.skillup;
-
+import java.util.Arrays;
+import java.util.Objects;
 public class IntArray {
     private int[] array;
 
@@ -20,6 +21,7 @@ public class IntArray {
     public void fillWithNumbers() {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) Math.round(Math.random() * 1000);
+            System.out.println(this.array[i]);
         }
     }
 
@@ -187,5 +189,47 @@ public class IntArray {
             }
         }
         return -1;
+    }
+    @Override
+    public String toString() {
+        String arrayToString = "[";
+        for (int i = 0; i < array.length; i++) {
+            arrayToString += array[i];
+            if (i < array.length - 1) {
+                arrayToString += ", ";
+            }
+        }
+        arrayToString += "]";
+        return "IntArray{" + "array=" + arrayToString + "}";
+    }
+    @Override
+    public boolean equals (Object o){
+        if ( this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        IntArray intArray = (IntArray) o;
+        if (this.array.length != intArray.array.length){
+            return false;
+        }
+        for (int i = 0; i < this.array.length; i++){
+            if (this.array[i] != intArray.array[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int arrayHash = 0;
+        for (int value : array){
+            arrayHash += Objects.hash(value);
+    }
+        return arrayHash;
+    }
+    public static void main(String[] args){
+        IntArray arrayToPrint = new IntArray(7);
+        arrayToPrint.fillWithNumbers();
+        System.out.println(arrayToPrint);
+
     }
 }
